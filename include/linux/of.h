@@ -462,4 +462,15 @@ static inline int of_property_read_u32(const struct device_node *np,
 	return of_property_read_u32_array(np, propname, out_value, 1);
 }
 
+/**
+ * of_get_timeout_sec() - Helper to read the timeout_sec property
+ * @np:		device node from which the property value is to be read.
+ * @timeout:	adress of the output value
+ */
+static inline int of_get_timeout_sec(const struct device_node *np,
+				     u32 *timeout)
+{
+	return of_property_read_u32(np, "timeout-sec", timeout);
+}
+
 #endif /* _LINUX_OF_H */
